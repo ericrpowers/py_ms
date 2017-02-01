@@ -3,8 +3,8 @@ import Solver
 
 
 class Game:
-    board = None
-    turn = 0
+    __board = None
+    __turn = 0
 
     def __init__(self):
         answer = ""
@@ -55,25 +55,24 @@ class Game:
 
         answer = "y"
         while answer == "y":
-            board = Board.Board(x_size, y_size, mines)
-            self.turn = 0
-            self.play(board)
+            self.__board = Board.Board(x_size, y_size, mines)
+            self.__turn = 0
+            self.play()
 
             answer = ""
             while not (answer == "y" or answer == "n"):
                 answer = raw_input("Want to play again?(y/n) ").replace("\\s+", "").lower()
 
-    def play(self, board):
+    def play(self):
         while True:
-            self.turn += 1
-            print("\nTurn %d" % self.turn)
-            board.show_board()
-            if board.is_final_move(board.set_position()):
+            self.__turn += 1
+            print("\nTurn %d" % self.__turn)
+            self.__board.show_board()
+            if self.__board.is_final_move(self.__board.set_position()):
                 break
 
-        if board.win():
-            print("Congrats, you found all the mines in %d turns." % self.turn)
+        if self.__board.win():
+            print("Congrats, you found all the mines in %d turns." % self.__turn)
         else:
             print("You hit a mine! Try again.")
-
-        board.show_mines()
+            self.__board.show_mines()
