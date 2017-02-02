@@ -18,6 +18,8 @@ class Minefield:
 
     # Avoid entries with mines and the first selected position
     def __place_mines(self, col_length, row_length, mine_count, row, column):
+        if (col_length * row_length) == mine_count:
+            raise ValueError("Number of mines equal size of board!")
         for i in xrange(mine_count):
             x = randint(0, row_length - 1)
             y = randint(0, col_length - 1)
