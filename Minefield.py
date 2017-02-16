@@ -6,7 +6,7 @@ class Minefield:
     __minefield = None
 
     def __init__(self, col_length, row_length, mine_count, row, column):
-        self.__minefield = {i: 0 for i in xrange(col_length * row_length)}
+        self.__minefield = [0 for i in xrange(col_length * row_length)]
         self.__place_mines(col_length, row_length, mine_count, row, column)
         self.__fill_hints(col_length, row_length)
 

@@ -15,7 +15,7 @@ class Board:
         self.__start_board()
 
     def __start_board(self):
-        self.__boardgame = {i: 9 for i in xrange(self.__col_len * self.__row_len)}
+        self.__boardgame = [9 for i in xrange(self.__col_len * self.__row_len)]
 
     def get_board_values(self):
         return self.__boardgame
