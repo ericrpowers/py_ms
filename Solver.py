@@ -22,7 +22,7 @@ class Solver:
     __board, __saved_board, __cl = (None,) * 3
 
     def __init__(self):
-        iterations = 10000
+        iterations = 100000
         start_time = datetime.now()
 
         while iterations != 0:
