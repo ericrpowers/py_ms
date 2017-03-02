@@ -75,4 +75,4 @@ class Game:
             print("Congrats, you found all the mines in %d turns." % self.__turn)
         else:
             print("You hit a mine! Try again.")
-            self.__board.show_mines()
+        self.__board.show_mines()
