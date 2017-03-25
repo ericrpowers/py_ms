@@ -207,7 +207,7 @@ class Solver:
                     self.__cl[(self.__x_size * yy) + xx].is_mine = 0
                     self.__safe_moves += 1
                 if self.__cl[(self.__x_size * y0) + x0].cov_neighbors - self.__cl[(self.__x_size * y0) + x0].val == 2\
-                        and self.__cl[(self.__x_size * yy) + xx].is_mine == 1:
+                        and self.__cl[(self.__x_size * yy) + xx].is_mine == -1:
                     self.__cl[(self.__x_size * yy) + xx].is_mine = 1
                     # Increase the nearby mine count if value is 1 - 8
                     for yyy in xrange(yy - 1, yy + 2):
@@ -257,4 +257,3 @@ class Solver:
             array = blind_array
 
         return array
-
